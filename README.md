@@ -1,19 +1,20 @@
-# AD Bulk Disable & Move
+# Disable and Move Inactive AD Users
 
-## Overview
-A PowerShell script to bulk disable Active Directory user accounts and move them into a specified Organizational Unit (OU).  
-This is useful for offboarding, cleanup, or archiving inactive accounts.
+## 📌 Overview
+A PowerShell script that automates the process of disabling Active Directory user accounts and moving them into a designated **Inactive Users OU**.  
+Useful for cleaning up AD environments and managing offboarded employees.
 
-## Features
-- Imports a list of users from a CSV file  
-- Disables each listed account  
-- Moves disabled accounts into a target OU  
-- Skips users that cannot be found  
+## ⚙️ Features
+- Reads user accounts from a CSV file (`SamAccountName` required).
+- Disables each specified account.
+- Moves accounts to a target **OU** (Organizational Unit).
+- Logs results directly to the console.
 
-## Usage
-1. Prepare a CSV file named `disables.csv` with the following column:
-   ```csv
-   SamAccountName
-   jdoe
-   asmith
-   bjohnson
+## 📂 CSV Format
+The CSV file must contain a column named **SamAccountName**:
+
+```csv
+SamAccountName
+jdoe
+asmith
+bjohnson
